@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title><?php echo $title; ?></title>
+
+  <link rel="stylesheet" href="ui/css/normalize.css" />
+  <!-- If you are using CSS version, add this -->
+  <link rel="stylesheet" href="ui/css/foundation.css" />
+  <link rel="stylesheet" href="ui/css/app.css" />
+
+  <script src="ui/js/jquery-1.9.1.min.js"></script>
+  <script src="ui/js/vendor/custom.modernizr.js"></script>
+  <script src="ui/js/simpleCart.min.js"></script>
+
+  <script>
+    simpleCart({
+      currency: "GBP",
+      shippingQuantityRate: 3,
+      cartColumns: [
+        { attr: "image", label: false, view: "image"},
+        //Name of the item
+        { attr: "name" , label: "Name" },
+        //Quantity displayed as an input
+        { attr: "quantity", label: "Quantity", view: "input"},
+        //Built in view for a remove link
+      
+        //Price of item
+        { attr: "price", label: "Price"},
+        //Subtotal of that row (quantity of that item * the price)
+        { attr: "total" , label: "Subtotal", view: "currency"  }
+      ],
+      checkout: {
+        type: "PayPal",
+        email: "pgm987@gmail.com"
+      },
+      cartStyle : "table"
+    });
+  </script>
+
+
+</head>
+<body>
+
+<div class="row">
+    <div class="large-12 columns">
+
+    <!-- Navigation -->
+
+      <div class="row">
+        <div class="large-12 columns">
+
+          <nav class="top-bar">
+            <ul class="title-area">
+              <!-- Title Area -->
+              <li class="name">
+                <h1>
+                  <a href="<?php echo $BASE; ?>"><?php echo $title; ?></a>
+                </h1>
+              </li>
+              <!-- <li class="toggle-topbar menu-icon"><a href="dora-web"><span>menu</span></a></li> -->
+            </ul>
+         
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#">Categories</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Bracelets</a></li>
+                    <li><a href="#">Round Things</a></li>
+                    <li><a href="#">Fancy Pencils</a></li>
+                  </ul>
+                </li>
+                <li class="divider"></li>
+                <li><a href="basket"></i><span class="simpleCart_quantity"></span> items</a></li>
+
+              </ul>
+            </section>
+          </nav>
+          <!-- End Top Bar -->
+        </div>
+      </div>
+
+    <!-- End Navigation -->
+
+    <?php echo $this->render($content,$this->mime,get_defined_vars()); ?>
+
+    <!-- Footer -->
+
+      <footer class="row">
+        <div class="large-12 columns"><hr />
+          <div class="row">
+
+            <div class="large-6 columns">
+              <ul class="inline-list">
+                <li><a href="dora-web">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#"><i class="foundicon-twitter"></i></a></li>
+                <li><a href="#"><i class="foundicon-facebook"></i></a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+    <!-- End Footer -->
+
+    </div>
+  </div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'ui/js/vendor/zepto' : 'ui/js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="ui/js/foundation/foundation.js"></script>
+  <script src="ui/js/foundation/foundation.alerts.js"></script>
+  <script src="ui/js/foundation/foundation.clearing.js"></script>
+  <script src="ui/js/foundation/foundation.cookie.js"></script>
+  <script src="ui/js/foundation/foundation.dropdown.js"></script>
+  <script src="ui/js/foundation/foundation.forms.js"></script>
+  <script src="ui/js/foundation/foundation.joyride.js"></script>
+  <script src="ui/js/foundation/foundation.magellan.js"></script>
+  <script src="ui/js/foundation/foundation.orbit.js"></script>
+  <script src="ui/js/foundation/foundation.placeholder.js"></script>
+  <script src="ui/js/foundation/foundation.reveal.js"></script>
+  <script src="ui/js/foundation/foundation.section.js"></script>
+  <script src="ui/js/foundation/foundation.tooltips.js"></script>
+  <script src="ui/js/foundation/foundation.topbar.js"></script>
+  <script>
+  $(document).foundation();
+  </script>
+</body>
+</html>
