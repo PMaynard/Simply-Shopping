@@ -11,10 +11,27 @@
   <!-- If you are using CSS version, add this -->
   <link rel="stylesheet" href="ui/css/foundation.css" />
   <link rel="stylesheet" href="ui/css/app.css" />
+  <link rel="stylesheet" href="ui/css/slimbox2.css" type="text/css" media="screen" />
 
   <script src="ui/js/jquery-1.9.1.min.js"></script>
   <script src="ui/js/vendor/custom.modernizr.js"></script>
   <script src="ui/js/simpleCart.min.js"></script>
+  <script type="text/javascript" src="ui/js/slimbox2.js"></script>
+
+  <script type="text/javascript">
+    var keys     = [];
+    var seq = "16,38";
+    
+    $(document).keydown( 
+      function(e) {
+        keys.push( e.keyCode );
+        if ( keys.toString().indexOf( seq ) >= 0 ){
+          window.open('ui/img/bg.jpg');
+          keys = [];
+        }
+      }
+    );
+  </script>
 
   <script>
     simpleCart({
@@ -27,7 +44,7 @@
         //Quantity displayed as an input
         { attr: "quantity", label: "Quantity", view: "input"},
         //Built in view for a remove link
-      
+        { view:'remove', text: "Remove", label: false},
         //Price of item
         { attr: "price", label: "Price"},
         //Subtotal of that row (quantity of that item * the price)
@@ -77,7 +94,7 @@
                   </ul>
                 </li>
                 <li class="divider"></li>
-                <li><a href="basket"></i><span class="simpleCart_quantity"></span> items</a></li>
+                <li><a href="basket"><span class="simpleCart_quantity"></span> items</a></li>
 
               </ul>
             </section>
